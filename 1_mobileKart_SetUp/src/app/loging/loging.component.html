@@ -1,0 +1,29 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Login</h2>
+  <img [src]="myimage" />
+  <form name="form" (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" name="username" [(ngModel)]="userName" required />
+
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="passWord" required />
+
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" (click)="validate()">Login</button>
+    </div>
+
+    <div class="form-group">
+      {{userName}}
+    </div>
+
+    <div class="form-group" [hidden]="invalideuser">
+      {{userName}} is not allowed to login.
+    </div>
+
+  </form>
+</div>
+

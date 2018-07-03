@@ -1,0 +1,29 @@
+<div >
+  <div *ngIf="!(mobiles && mobiles.length>1)">
+    no mobiles . sorry.
+  </div>
+  <div  class="table-responsive">
+      <table class="table" *ngIf="mobiles && mobiles.length>1">
+          <thead>
+              <tr>
+                  <th>Mobile-Name</th>
+                  <th>Code</th>
+                  <th>Released</th>
+                  <th>Price</th>
+                  <th>user review</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let mobile of mobiles'>
+                <td><img [src]="imageURL + mobile.image"</td>
+                  <td>{{ mobile.name }}</td>
+                  <td>{{ mobile.model }}</td>
+                  <td>{{ mobile.releaseDate }}</td>
+                  <td>{{ mobile.price }}</td>
+                  <td>{{ mobile.rating }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
