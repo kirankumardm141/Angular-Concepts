@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+  <div  class="table-responsive">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Mobile-Name</th>
+                  <th>Code</th>
+                  <th>Released</th>
+                  <th>Price</th>
+                  <th>user review</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let mobile of mobiles'>
+                  <td>{{ mobile.name }}</td>
+                  <td>{{ mobile.model }}</td>
+                  <td>{{ mobile.releaseDate }}</td>
+                  <td>{{ mobile.price }}</td>
+                  <td>{{ mobile.rating }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+

@@ -1,0 +1,62 @@
+<div class="panel panel-default">
+    <div class="panel-heading" style="text-align: right">
+      Welcome {{loggedInUser}}
+    </div>
+    <div class="panel-body">
+      <div class="container">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="selectBox">Filter By : </label>
+            <select [(ngModel)]="selectedFilter" id="selectBox" name="filterBox">
+              <option *ngFor="let filter of filterOptions">{{filter}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fiterText">Filter Text : </label>
+            <input type="text" [(ngModel)]="filterText" name="filterText" id="fiterText" />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" (click)="filter()">Go</button>
+          </div>
+        </form>
+          <div class="row">
+            <div class="col-md-2">
+              
+             
+            </div>
+            <div class="col-md-3">
+             
+            </div>
+            <div>
+
+            </div>
+            <div class="col-md-1">
+             
+            </div>
+          </div>
+      </div>
+       
+    </div>
+  </div>
+  <div class="panel panel-primary">
+  <div  class="table-responsive">
+      <table class="table" *ngIf='mobiles && mobiles.length'>
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Mobile-Name</th>
+                  <th>Code</th>
+                  <th>Released</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>user review</th>
+              </tr>
+          </thead>
+          <tbody >
+            <tr  *ngFor='let mobile of filteredMobiles' mob-mobile [mobile]="mobile">
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+

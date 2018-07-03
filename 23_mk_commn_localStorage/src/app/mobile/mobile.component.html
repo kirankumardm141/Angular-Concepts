@@ -1,0 +1,18 @@
+<td>
+  <img [src]='imageUrl+mobile.image' style="height:75px;width:75px;" />
+   
+</td>
+<td> 
+  <a [routerLink]="['/mobiles', mobile.msId]">
+  {{ mobile.name }}
+</a>
+</td>
+<td>{{ mobile.model }}</td>
+<td>{{ mobile.releaseDate }}</td>
+<td>{{ mobile.price | currency:'USD' }}</td>
+<td>{{mobile.available |status}}</td>
+<td>
+  <mob-rating [rating]="mobile.rating" ></mob-rating>
+
+</td>
+<!-- <td>{{ mobile.rating }}</td> -->
